@@ -1,0 +1,13 @@
+.profile-cover{position:relative;overflow:hidden}
+.cover-image{display:block;width:100%;height:100%;object-fit:cover}
+.media-edit{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:40px;min-height:40px;padding:8px;background:white;border:1px solid #d7e0eb;border-radius:50%;color:var(--blue);cursor:pointer;box-shadow:0 2px 8px #10213b20}
+.media-edit img{width:20px;height:20px}
+.media-edit:focus-within{outline:3px solid #76a0cf;outline-offset:4px}
+.media-edit:hover{background:var(--light)}
+.cover-edit{position:absolute;right:16px;bottom:16px;border-radius:8px;font-size:13px;padding:9px 14px;z-index:2}
+.avatar-editor{position:relative;width:170px;height:170px;margin:-85px auto 0;z-index:2}
+.avatar-editor .profile-avatar{margin:0;width:100%;height:100%;object-fit:cover}
+.avatar-edit{position:absolute;bottom:3px;right:0;z-index:3}
+.account-link>img:first-child{object-fit:cover}
+@media(max-width:760px){.avatar-editor{width:140px;height:140px;margin-top:-70px}.cover-edit{right:12px;bottom:12px}.cover-edit span{display:none}}
+@media print{.media-edit{display:none!important}}

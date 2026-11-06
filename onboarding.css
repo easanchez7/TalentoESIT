@@ -13,3 +13,10 @@
 .graduation-entry p{font-size:14px;color:var(--ink);margin-top:8px}
 #profile-error:not([hidden]){padding:14px;border:1px solid #efb0aa;border-radius:8px;background:#fff5f4;margin-bottom:20px}
 @media(max-width:760px){.account-dropdown{min-width:180px}.site-header nav .nav-locked{font-size:12px}.editor-section-heading .readonly-badge{font-size:11px}}
+
+.inline-profile-name{margin:20px auto 12px;max-width:760px}
+.profile-name-input{display:block;width:100%;font:700 38px/1.25 'Segoe UI',Arial,sans-serif;color:var(--blue);text-align:center;background:transparent;border:1px solid transparent;border-radius:8px;padding:7px 12px}
+.profile-name-input:hover{border-color:var(--line);background:#f8fafc}
+.profile-name-input:focus{border-color:#76a0cf;background:white}
+.editor-location{color:var(--ink);font-size:14px;margin-bottom:20px}
+@media(max-width:760px){.profile-name-input{font-size:30px}.inline-profile-name{margin-top:18px}}
