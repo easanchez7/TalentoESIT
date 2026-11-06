@@ -1,0 +1,81 @@
+/* Controles y marcos compartidos */
+.nav-login{display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.25;white-space:nowrap;min-height:34px;max-width:220px;overflow:hidden;text-overflow:ellipsis}
+.site-header nav{gap:28px;flex-shrink:0}
+.site-header nav .nav-login{font-weight:600}
+.button{line-height:1.25;text-align:center}
+.password-field input::-ms-reveal,.password-field input::-ms-clear{display:none}
+.filters select,.editor-field select{appearance:none;-webkit-appearance:none;background:#fff url('icon/chevron-down.svg') right 16px center/16px 16px no-repeat;padding-right:46px}
+.profile-avatar{position:relative;z-index:1;display:block;margin:-85px auto 0}
+.profile-intro{display:flow-root;padding-top:0;min-height:0;padding-bottom:48px}
+.profile-intro .profile-actions{top:20px}
+.profile-intro h1{margin-top:22px}
+.profile-bio,.profile-entry p{white-space:pre-line}
+.profile-intro>.visibility-control{margin:14px auto 22px;max-width:270px}
+.visibility-control{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:14px;color:var(--blue);cursor:pointer}
+.visibility-choice{display:inline-flex;align-items:center;gap:12px;position:relative;font-weight:600}
+.visibility-choice input{position:absolute;right:0;top:0;width:44px;height:26px;margin:0;opacity:0;cursor:pointer;z-index:2}
+.switch-track{width:44px;height:26px;display:block;border-radius:20px;background:#9ba6b5;position:relative;transition:background .18s}
+.switch-track:after{content:'';position:absolute;left:3px;top:3px;width:20px;height:20px;background:white;border-radius:50%;box-shadow:0 1px 3px #0002;transition:transform .18s}
+.visibility-choice input:checked+.switch-track{background:var(--blue)}
+.visibility-choice input:checked+.switch-track:after{transform:translateX(18px)}
+.visibility-choice input:focus-visible+.switch-track{outline:3px solid #76a0cf;outline-offset:4px}
+.profile-editing{padding-top:0}
+.editor-toolbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 30px}
+.editor-toolbar h1{font-size:20px;font-weight:700}
+.editor-toolbar>div{display:flex;gap:12px}
+.button.small{font-size:14px;min-height:36px;padding:8px 20px;border-radius:6px}
+.editor-identity{display:flow-root;text-align:center;position:relative;padding:0 30px 35px}
+.editor-identity h2{font-size:38px;margin:20px 0}
+.editor-identity .visibility-control{max-width:300px;margin:20px auto 0}
+.editor-layout{max-width:1060px;display:grid;grid-template-columns:235px minmax(0,1fr);gap:30px;margin:0 auto 70px;padding:0 24px;align-items:start}
+.editor-nav{position:sticky;top:24px;display:flex;flex-direction:column;gap:10px;padding-top:8px}
+.editor-nav strong{font-size:15px;margin-bottom:8px}
+.editor-nav a{border:1px solid var(--line);box-shadow:0 2px 4px #223e6908;border-radius:6px;padding:12px 16px;font-size:14px;line-height:1.4;background:white}
+.editor-nav a:hover{background:var(--light)}
+.editor-content{min-width:0}
+.editor-section{margin-bottom:32px;scroll-margin-top:24px}
+.editor-section h2{font-size:24px;line-height:1.3;margin:0}
+.editor-section>h2{margin-bottom:18px}
+.editor-section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.editor-entries{display:flex;flex-direction:column;gap:16px}
+.editor-entry{border:1px solid var(--line);border-radius:10px;padding:20px;background:white;box-shadow:0 3px 7px #223e6908}
+.entry-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;color:var(--ink);font-size:12px}
+.delete-entry{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:0;border-radius:6px;background:transparent}
+.delete-entry:hover{background:#fff0f0}
+.delete-entry img{width:20px;height:20px}
+.editor-field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;font-size:14px;font-weight:600;min-width:0}
+.editor-field:last-child{margin-bottom:0}
+.editor-field input,.editor-field select,.editor-field textarea{width:100%;min-width:0;min-height:44px;border:1px solid var(--line);border-radius:7px;padding:11px 13px;color:var(--blue);font-weight:400;background-color:white}
+.editor-field textarea{resize:vertical;line-height:1.5;min-height:115px}
+.editor-field select{padding-right:46px}
+.editor-bottom{display:flex;justify-content:flex-end;gap:12px;border-top:1px solid var(--line);padding-top:24px}
+@media(max-width:1000px){.site-header nav{gap:16px}.nav-login{min-width:120px}.profile-intro .profile-actions{position:static;margin:18px 0;justify-content:center}.editor-layout{grid-template-columns:190px minmax(0,1fr);gap:20px}.editor-section h2{font-size:22px}}
+@media(max-width:760px){.site-header{height:auto;min-height:72px;flex-wrap:wrap;gap:12px}.site-header nav{gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav-login{min-width:100px;max-width:180px;padding:8px 12px}.profile-avatar{margin-top:-70px}.profile-intro h1{margin-top:18px}.editor-toolbar{padding:18px 20px}.editor-toolbar h1{font-size:18px}.editor-toolbar .button{padding:8px 14px}.editor-identity h2{font-size:30px}.editor-layout{grid-template-columns:1fr;padding:0 20px}.editor-nav{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0;gap:8px}.editor-nav strong{grid-column:1/-1}.editor-nav a{font-size:13px;padding:10px}.editor-entry{padding:16px}.editor-section h2{font-size:21px}.editor-bottom .button{font-size:15px}.visibility-control{font-size:13px}.profile-intro>.visibility-control{margin-top:16px}}
+@media(max-width:440px){.site-header .brand{margin-right:0}.site-header nav{column-gap:12px;row-gap:10px;max-width:calc(100% - 92px)}.site-header nav>.nav-login{min-width:0;flex:1}.site-header nav>.nav-login:last-child{min-width:100px}.editor-toolbar{align-items:flex-start}.editor-toolbar>div{gap:8px}.editor-toolbar .button{font-size:12px;padding:8px 12px}.editor-section-heading{gap:8px}.editor-section-heading .button{padding:8px 12px}}
+@media print{.visibility-control,.editor-toolbar,.editor-nav,.editor-bottom{display:none!important}}
+
+/* Orden de las tarjetas y visibilidad alineada al extremo derecho */
+.drag-handle,.move-entry{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;flex-shrink:0;width:36px;height:36px}
+.drag-handle{cursor:grab;touch-action:pan-y}
+.drag-handle:active{cursor:grabbing}
+.drag-handle img{width:20px;height:24px;pointer-events:none}
+.drag-handle:hover,.move-entry:hover{background:var(--light)}
+.move-entry{font-size:20px}
+.move-entry:disabled{opacity:.25;cursor:default;background:transparent}
+.entry-controls{display:flex;align-items:center;gap:4px;margin-left:auto}
+.entry-label{flex:1;min-width:0}
+.editor-entry{position:relative}
+.editor-entry.is-dragging{opacity:.5}
+.editor-entry.drop-before:before,.editor-entry.drop-after:after{content:'';position:absolute;left:0;right:0;height:3px;background:#76a0cf;border-radius:3px;pointer-events:none}
+.editor-entry.drop-before:before{top:-10px}
+.editor-entry.drop-after:after{bottom:-10px}
+.editor-identity .visibility-control{position:absolute;right:30px;top:20px;margin:0;max-width:none}
+.profile-intro>.visibility-control{position:absolute;right:30px;top:80px;margin:0;max-width:none}
+@media(max-width:1000px){.profile-intro>.visibility-control{position:static;width:max-content;max-width:100%;margin:18px 0 22px auto}}
+@media(max-width:760px){.editor-identity .visibility-control{position:static;width:max-content;max-width:100%;margin:20px 0 0 auto}.entry-heading{gap:6px}.entry-label{font-size:11px}.drag-handle,.move-entry,.entry-controls .delete-entry{width:32px;height:40px}.entry-controls{gap:0}}
+
+.editor-actions{position:absolute;right:30px;top:20px;display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.editor-identity .editor-actions .visibility-control{position:static;width:auto;max-width:none;margin:0 8px 0 0}
+@media(max-width:1000px){.editor-actions{position:static;flex-wrap:wrap;margin-top:20px;gap:10px}}
+@media(max-width:440px){.editor-actions{gap:8px}.editor-actions .button{font-size:12px;padding:8px 12px}.editor-identity .editor-actions .visibility-control{margin-right:2px}.editor-actions .visibility-choice{gap:8px}}
+@media print{.editor-actions{display:none!important}}
