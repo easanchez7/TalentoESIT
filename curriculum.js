@@ -25,34 +25,98 @@ function buildCurriculum(person,options){
 
 function curriculumResult(cv){
   const editable=(tag,text,className='')=>`<${tag} class="${className}" contenteditable="plaintext-only" spellcheck="true">${esc(cleanText(text))}</${tag}>`;
-  return `<div class="cv-result-actions"><p>Haz clic en los textos para ajustarlos</p><div><button type="button" class="button secondary small" data-cv-action="copy">Copiar texto</button><button type="button" class="button small" data-cv-action="print">Guardar PDF</button></div></div>${cv.instructions?`<aside class="cv-editor-note"><strong>Tu guía de edición</strong><p>${esc(cv.instructions)}</p><span>Usa estas indicaciones al revisar los textos de la vista previa</span></aside>`:''}<article id="cv-preview" class="cv-paper cv-${cv.template} cv-${cv.color}" aria-label="Currículum editable"><header class="cv-paper-header">${editable('h2',cv.name)}${editable('p',cv.role,'cv-paper-role')}${editable('p',cv.location,'cv-paper-location')}</header>${cv.target?`<section class="cv-paper-section"><h3>Objetivo profesional</h3>${editable('p','Aplicar al puesto de '+cv.target)}</section>`:''}${cv.summary?`<section class="cv-paper-section"><h3>Perfil profesional</h3>${editable('p',cv.summary)}</section>`:''}${cv.sections.map(section=>`<section class="cv-paper-section"><h3>${section.title}</h3>${section.items.map(([title,...lines])=>`<div class="cv-paper-entry">${editable('h4',title)}${lines.filter(Boolean).map(text=>editable('p',text)).join('')}</div>`).join('')}</section>`).join('')}</article>`;
+  return `<div class="cv-result-actions"><p>Haz clic en los textos para ajustarlos</p><div><button type="button" class="button small" data-cv-action="print">Guardar PDF</button></div></div>${cv.instructions?`<aside class="cv-editor-note"><strong>Tu guía de edición</strong><p>${esc(cv.instructions)}</p><span>Usa estas indicaciones al revisar los textos de la vista previa</span></aside>`:''}<article id="cv-preview" class="cv-paper cv-${cv.template} cv-${cv.color}" aria-label="Currículum editable"><header class="cv-paper-header">${editable('h2',cv.name)}${editable('p',cv.role,'cv-paper-role')}${editable('p',cv.location,'cv-paper-location')}</header>${cv.target?`<section class="cv-paper-section"><h3>Objetivo profesional</h3>${editable('p','Aplicar al puesto de '+cv.target)}</section>`:''}${cv.summary?`<section class="cv-paper-section"><h3>Perfil profesional</h3>${editable('p',cv.summary)}</section>`:''}${cv.sections.map(section=>`<section class="cv-paper-section"><h3>${section.title}</h3>${section.items.map(([title,...lines])=>`<div class="cv-paper-entry">${editable('h4',title)}${lines.filter(Boolean).map(text=>editable('p',text)).join('')}</div>`).join('')}</section>`).join('')}</article>`;
 }
 
 app.addEventListener('click',event=>{
   const idea=event.target.closest('[data-cv-focus]');
   if(idea){app.querySelectorAll('[data-cv-focus]').forEach(button=>{const selected=button===idea;button.classList.toggle('selected',selected);button.setAttribute('aria-pressed',String(selected));});return;}
   const action=event.target.closest('[data-cv-action]');
-  if(!action)return;
+  if(!action||!authenticated||!profileComplete)return;
   if(action.dataset.cvAction==='print'){document.body.classList.add('printing-cv');window.print();return;}
-  if(action.dataset.cvAction==='copy'){
-    const text=document.querySelector('#cv-preview')?.innerText;
-    if(!text)return;
-    if(!navigator.clipboard){toast('Selecciona el texto de la vista previa y cópialo con Ctrl + C');return;}
-    navigator.clipboard.writeText(text).then(()=>toast('Currículum copiado')).catch(()=>toast('Selecciona el texto de la vista previa y cópialo con Ctrl + C'));
-  }
+
 });
 app.addEventListener('submit',event=>{
   if(event.target.id!=='cv-form')return;
   event.preventDefault();
+  if(!authenticated){location.hash='login';return;}
+  if(!profileComplete){location.hash='perfil1';return;}
   const form=event.target;
   const options={focus:form.querySelector('[data-cv-focus][aria-pressed="true"]').dataset.cvFocus};
   for(const name of ['target','instructions','template'])options[name]=form.elements[name].value;
   cvDraft=buildCurriculum(people[0],options);
   document.querySelector('#cv-result').innerHTML=curriculumResult(cvDraft);
+  paginateCurriculum();
   finishInterface();
   toast('Currículum generado, revisa y ajusta los textos antes de compartirlo');
 });
 app.addEventListener('focusout',event=>{
-  if(event.target.matches('#cv-preview [contenteditable]'))event.target.textContent=cleanText(event.target.textContent);
+  if(event.target.matches('#cv-preview [contenteditable]')){event.target.textContent=cleanText(event.target.textContent);paginateCurriculum();}
 });
 window.addEventListener('afterprint',()=>document.body.classList.remove('printing-cv'));
+
+let cvResizeObserver=null;
+function fitCurriculumPreview(){
+  const preview=document.querySelector('#cv-preview');
+  const output=document.querySelector('.cv-output');
+  if(preview&&output)preview.style.zoom=String(Math.min(1,output.clientWidth/preview.offsetWidth));
+}
+
+function paginateCurriculum(){
+  const preview=document.querySelector('#cv-preview');
+  if(!preview)return;
+  const pages=preview.querySelectorAll('.cv-sheet-inner');
+  const blocks=pages.length?Array.from(pages).flatMap(page=>Array.from(page.children)):Array.from(preview.children);
+  preview.replaceChildren();
+  let body;
+  function newPage(){
+    const sheet=document.createElement('div');
+    sheet.className='cv-sheet';
+    sheet.setAttribute('aria-label',`Página ${preview.children.length+1} del currículum`);
+    body=document.createElement('div');
+    body.className='cv-sheet-inner';
+    sheet.append(body);
+    preview.append(sheet);
+  }
+  const overflowing=()=>body.scrollHeight>body.clientHeight+1;
+  function place(block){
+    body.append(block);
+    if(!overflowing())return;
+    block.remove();
+    if(body.children.length){newPage();body.append(block);if(!overflowing())return;block.remove();}
+    // Split long sections at entry boundaries, repeating the section heading
+    const entries=Array.from(block.querySelectorAll(':scope > .cv-paper-entry'));
+    if(entries.length>1){
+      for(const entry of entries){const fragment=block.cloneNode(false);fragment.append(block.querySelector('h3').cloneNode(true),entry);place(fragment);}
+      return;
+    }
+    const entry=entries[0];
+    const paragraphs=entry?Array.from(entry.querySelectorAll(':scope > p')):[];
+    if(paragraphs.length>1){
+      for(const paragraph of paragraphs){const fragment=block.cloneNode(false);const part=entry.cloneNode(false);part.append(entry.querySelector('h4').cloneNode(true),paragraph);fragment.append(block.querySelector('h3').cloneNode(true),part);place(fragment);}
+      return;
+    }
+    const paragraph=paragraphs[0]||block.querySelector('p');
+    if(!paragraph){body.append(block);return;}
+    // A single exceptionally long paragraph continues on another A4 sheet
+    let words=paragraph.textContent.split(/\s+/).filter(Boolean);
+    while(words.length){
+      const fragment=block.cloneNode(true);
+      const text=entry?fragment.querySelector('.cv-paper-entry > p'):fragment.querySelector('p');
+      body.append(fragment);
+      let low=1,high=words.length,best=0;
+      while(low<=high){const middle=Math.floor((low+high)/2);text.textContent=words.slice(0,middle).join(' ');if(!overflowing()){best=middle;low=middle+1;}else high=middle-1;}
+      if(!best){fragment.remove();return;}
+      text.textContent=words.splice(0,best).join(' ');
+      if(words.length)newPage();
+    }
+  }
+  newPage();
+  for(const block of blocks)place(block);
+  fitCurriculumPreview();
+  cvResizeObserver?.disconnect();
+  if(typeof ResizeObserver!=='undefined'){
+    cvResizeObserver=new ResizeObserver(fitCurriculumPreview);
+    cvResizeObserver.observe(document.querySelector('.cv-output'));
+  }
+}

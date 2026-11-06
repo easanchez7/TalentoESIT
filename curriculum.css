@@ -4,3 +4,19 @@
 @media(max-width:850px){.cv-workspace{grid-template-columns:1fr}.cv-config{padding:26px}.cv-hero{padding:40px 24px}.cv-hero h1{font-size:30px}.cv-output{min-width:0}.cv-result-actions{flex-direction:row;align-items:center}.cv-empty{min-height:350px;padding:35px 24px}.profile-logout{margin:0 24px 35px}}
 @media(max-width:540px){.site-header nav .cv-nav{font-size:12px}.cv-hero h1{font-size:26px}.cv-hero p{font-size:14px}.cv-workspace{padding:22px 14px 40px}.cv-config{padding:22px 18px}.cv-config h2{font-size:22px}.cv-paper{padding:24px 20px}.cv-paper h2{font-size:25px}.cv-output-heading{align-items:flex-start}.cv-result-actions{align-items:flex-start;flex-direction:column}.cv-templates{gap:8px}.cv-template{padding:12px 8px}.cv-options{gap:12px}}
 @media print{body.printing-cv{background:white}body.printing-cv .cv-hero,body.printing-cv .cv-config,body.printing-cv .cv-output-heading,body.printing-cv .cv-result-actions,body.printing-cv .cv-editor-note{display:none!important}body.printing-cv .cv-page,body.printing-cv .cv-workspace,body.printing-cv .cv-output,body.printing-cv #cv-result{display:block!important;padding:0;margin:0;background:white;max-width:none}body.printing-cv .cv-paper{border:0;box-shadow:none;padding:0;color:#111}body.printing-cv .cv-paper [contenteditable]{outline:0}body.printing-cv .cv-paper-header{break-inside:avoid}body.printing-cv .cv-paper-section h3{break-after:avoid}}
+
+/* Physical A4 pages, scaled only for the on-screen preview */
+.cv-output{min-width:0}
+#cv-preview.cv-paper{width:210mm;max-width:none;padding:0;border:0;box-shadow:none;background:transparent;display:grid;gap:20px;transform-origin:top left}
+.cv-sheet{width:210mm;height:297mm;padding:16mm;box-sizing:border-box;background:white;border:0;box-shadow:0 4px 20px #20395814}
+.cv-sheet-inner{height:265mm;display:flow-root}
+.cv-sheet .cv-paper-header{margin-top:0}
+.cv-esencial .cv-sheet{border-left:2mm solid var(--cv-accent);padding-left:14mm}
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body.printing-cv{margin:0!important;padding:0!important}
+  body.printing-cv #cv-preview{display:block!important;width:210mm!important;zoom:1!important;background:white}
+  body.printing-cv .cv-sheet{width:210mm;height:297mm;margin:0;box-shadow:none;break-after:page;break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  body.printing-cv .cv-sheet:last-child{break-after:auto}
+  body.printing-cv .cv-sheet-inner{height:265mm}
+}
