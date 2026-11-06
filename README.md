@@ -4,7 +4,8 @@ Versión estática en HTML, CSS y JavaScript. Sin PHP, base de datos ni dependen
 
 Abre `index.html` directamente o visita `http://localhost/TalentoESIT/` con Apache de XAMPP.
 
-Cuenta de demostración: DUI `05308231-0`, contraseña `admin123`.
+Accesos de demostración: DUI `05308231-0` o `06480338-9`, contraseña `admin123`
+Ambos accesos usan el mismo perfil de demostración local
 
 Flujo: inicio → iniciar sesión → perfil1. Incluye directorio de nueve profesionales ficticios con avatares genéricos locales, búsqueda, filtros, perfiles públicos, edición del perfil en la misma página con Guardar y Descartar y CV mediante la opción de imprimir/guardar como PDF del navegador.
 
