@@ -19,3 +19,9 @@ El switch Privado / Visible controla la aparición del perfil en el directorio y
 Al ser una aplicación estática sin servidor ni base de datos, los cambios y la visibilidad no se sincronizan entre distintos dispositivos o navegadores
 
 Regla editorial: los textos de la interfaz se muestran sin punto final
+
+La página `#curriculum` está disponible junto a Talento y requiere iniciar sesión
+Incluye tres plantillas, enfoques para ordenar la información real del perfil, vista previa editable, copia de texto e impresión para guardar como PDF
+El generador es local y no llama a un modelo de IA externo
+Las indicaciones libres se muestran como guía de edición y no se interpretan mediante IA
+Cerrar sesión está dentro del perfil del propietario y la cabecera muestra su avatar junto al nombre
