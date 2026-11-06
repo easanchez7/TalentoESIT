@@ -1,0 +1,15 @@
+.nav-locked{opacity:.45;cursor:not-allowed;white-space:nowrap}
+.account-menu{position:relative}
+.account-link .account-chevron{width:14px;height:14px;border-radius:0;margin-left:3px}
+.account-dropdown{position:absolute;right:0;top:calc(100% + 10px);min-width:190px;padding:7px;background:white;color:var(--blue);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 30px #152c4926;z-index:30}
+.account-dropdown a,.account-dropdown button{display:block;width:100%;padding:12px 14px;text-align:left;font-size:14px;background:white;border:0;border-radius:6px}
+.account-dropdown a:hover,.account-dropdown button:hover{background:var(--light)}
+.account-dropdown button{border-top:1px solid var(--line);border-radius:0 0 6px 6px}
+.onboarding-note{padding:16px 18px;border-left:3px solid #76a0cf;background:var(--light);border-radius:8px;margin-bottom:25px;font-size:14px;line-height:1.6}
+.readonly-badge{background:var(--light);padding:7px 12px;border-radius:6px;white-space:nowrap;font-size:12px}
+.graduation-note{color:var(--ink);font-size:13px;margin-bottom:16px}
+.graduation-entry{background:#f7f9fc;box-shadow:none}
+.graduation-entry h3{font-size:17px;margin-bottom:12px}
+.graduation-entry p{font-size:14px;color:var(--ink);margin-top:8px}
+#profile-error:not([hidden]){padding:14px;border:1px solid #efb0aa;border-radius:8px;background:#fff5f4;margin-bottom:20px}
+@media(max-width:760px){.account-dropdown{min-width:180px}.site-header nav .nav-locked{font-size:12px}.editor-section-heading .readonly-badge{font-size:11px}}
