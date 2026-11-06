@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talento ESIT | Tu talento merece ser visible</title>
+  <meta name="description"
+    content="Plataforma de Talento ESIT - Escuela Superior de Innovación y Tecnología de El Salvador. Crea tu perfil profesional y conecta con oportunidades." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../iconos/favicon.svg" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Google Fonts: Montserrat para encabezados y Plus Jakarta Sans para cuerpo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       1. HEADER / NAVBAR
+       ========================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo ESIT -->
+      <a href="#inicio" class="header-brand" aria-label="Talento ESIT" data-route="home">
+        <img src="../iconos/esit-logo-header.png" alt="ESIT - Escuela Superior de Innovación y Tecnología" class="header-logo-img" />
+      </a>
+
+      <!-- Navegación y Botón Iniciar Sesión -->
+      <nav class="nav-actions">
+        <a href="#inicio" class="nav-link" data-route="home">Inicio</a>
+        <a href="#directorio" class="nav-link" data-route="directory">Talento</a>
+        <a href="#acceso" class="btn-login" data-route="login">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. HERO SECTION
+       ========================================== -->
+  <main id="home-view" class="app-view">
+  <section class="hero-section" id="inicio">
+    <div class="hero-overlay"></div>
+
+    <!-- Flecha Carrusel Izquierda -->
+    <button class="carousel-arrow prev" aria-label="Anterior">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Contenido del Banner Principal -->
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          TU TALENTO MERECE SER<br>VISIBLE
+        </h1>
+        <p class="hero-desc">
+          Crea un perfil profesional con tu experiencia, habilidades y credenciales ESIT<br>
+          Conecta con empresas e instituciones que buscan talento como el tuyo
+        </p>
+        <a href="#directorio" class="btn-hero" data-route="directory">Buscar talento</a>
+      </div>
+    </div>
+
+    <!-- Flecha Carrusel Derecha -->
+    <button class="carousel-arrow next" aria-label="Siguiente">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </section>
+
+  <!-- ==========================================
+       3. SECTION: PUBLICAR TU PERFIL ES SENCILLO
+       ========================================== -->
+  <section class="steps-section" id="pasos">
+    <div class="steps-container">
+      <h2 class="section-title">PUBLICAR TU PERFIL ES SENCILLO</h2>
+
+      <div class="steps-grid">
+        <!-- Paso 01 -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <p class="step-text">
+            Consulta los datos académicos y personales que ya están registrados en tu perfil
+          </p>
+        </div>
+
+        <!-- Paso 02 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <p class="step-text">
+            Revisa tus datos y actualiza tu perfil cuando cambien tus estudios, habilidades o logros
+          </p>
+        </div>
+
+        <!-- Paso 03 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <p class="step-text">
+            Cualquier persona puede ver tu trayectoria profesional y consultar tu formación
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. SECTION: ENCUENTRA PROFESIONALES...
+       ========================================== -->
+  <section class="professionals-section" id="talento">
+    <div class="professionals-container">
+
+      <!-- Columna Izquierda: Textos y Botón -->
+      <div class="professionals-info">
+        <h2 class="professionals-title">
+          ENCUENTRA PROFESIONALES CON<br>
+          LAS HABILIDADES QUE NECESITAS
+        </h2>
+        <p class="professionals-desc">
+          Explora perfiles, filtra por áreas y revisa credenciales ESIT.<br>
+          Contacta directamente a profesionales registrados en la plataforma
+        </p>
+        <a href="#directorio" class="btn-navy" data-route="directory">Buscar talento</a>
+      </div>
+
+      <!-- Columna Derecha: Tarjetas de Características -->
+      <div class="features-grid">
+        <!-- Tarjeta 1 -->
+        <div class="feature-card">
+          <h3 class="feature-title">Credenciales consultables</h3>
+          <p class="feature-desc">Consulta la formación vinculada al perfil</p>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="feature-card">
+          <h3 class="feature-title">Contacto directo</h3>
+          <p class="feature-desc">Conecta sin intermediarios</p>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="feature-card">
+          <h3 class="feature-title">Filtros por área</h3>
+          <p class="feature-desc">Encuentra perfiles relevantes con más facilidad</p>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="feature-card">
+          <h3 class="feature-title">Perfiles públicos</h3>
+          <p class="feature-desc">Revisa la trayectoria desde un enlace compartible</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. SECTION: CALL TO ACTION
+       ========================================== -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-info">
+        <span class="cta-eyebrow">TU SIGUIENTE OPORTUNIDAD EMPIEZA AQUÍ</span>
+        <h2 class="cta-title">HAZ VISIBLE TODO LO QUE SABES HACER</h2>
+        <p class="cta-desc">Actualiza hoy tu perfil profesional en la plataforma ESIT</p>
+      </div>
+
+      <a href="#acceso" class="btn-cta" data-route="login">
+        Iniciar sesión
+        <svg viewBox="0 0 24 24">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <main id="directory-view" class="app-view screen-view" hidden>
+    <div class="screen-container">
+      <div class="screen-heading"><h1>Encuentra talento para lo que viene</h1><p>Explora perfiles profesionales, filtra por especialidad y descubre credenciales vinculadas a la formación ESIT.</p></div>
+      <form class="screen-toolbar" id="talent-search"><input id="search-input" type="search" placeholder="Buscar por nombre, profesión o habilidad" aria-label="Buscar talento"><button class="screen-button" type="submit">Buscar</button></form>
+      <div class="directory-layout">
+        <aside class="filter-panel" aria-label="Filtros de talento">
+          <h2>Filtros <button type="button" class="text-action" id="clear-filters" style="float:right">Limpiar</button></h2>
+          <fieldset class="filter-group"><legend>Área</legend>
+            <label class="filter-option"><input type="checkbox" value="Desarrollo" data-filter="area"> Desarrollo</label>
+            <label class="filter-option"><input type="checkbox" value="Diseño" data-filter="area"> Diseño</label>
+            <label class="filter-option"><input type="checkbox" value="Datos" data-filter="area"> Datos</label>
+            <label class="filter-option"><input type="checkbox" value="DevOps" data-filter="area"> DevOps</label>
+          </fieldset>
+          <fieldset class="filter-group"><legend>Modalidad</legend>
+            <label class="filter-option"><input type="checkbox" value="Remoto" data-filter="mode"> Remoto</label>
+            <label class="filter-option"><input type="checkbox" value="Híbrido" data-filter="mode"> Híbrido</label>
+            <label class="filter-option"><input type="checkbox" value="Presencial" data-filter="mode"> Presencial</label>
+          </fieldset>
+        </aside>
+        <section aria-label="Perfiles profesionales"><p class="directory-count" id="directory-count" aria-live="polite"></p><div class="talent-grid" id="talent-grid"></div></section>
+      </div>
+    </div>
+  </main>
+
+  <main id="profile-view" class="app-view screen-view" hidden>
+    <div class="screen-container">
+      <div class="view-actions"><button type="button" class="screen-button secondary" data-route="directory">← Volver al talento</button><div><button type="button" class="screen-button secondary" id="generate-cv">Generar CV</button> <button type="button" class="screen-button" data-route="login" data-next="editor">Editar perfil</button></div></div>
+      <article class="profile-panel"><div class="profile-hero"></div><div class="profile-body" id="profile-content"></div></article>
+    </div>
+  </main>
+
+  <main id="login-view" class="app-view screen-view login-wrap" hidden>
+    <div class="login-card"><div class="view-actions"><button type="button" class="screen-button secondary" data-route="home">← Inicio</button></div><h1>Bienvenido/a</h1><p>Elige cómo iniciar sesión para continuar a tu perfil.</p>
+      <div class="document-tabs" role="group" aria-label="Tipo de documento">
+        <button type="button" class="document-tab" aria-pressed="true" data-document="DUI">DUI</button><button type="button" class="document-tab" aria-pressed="false" data-document="Pasaporte">Pasaporte</button><button type="button" class="document-tab" aria-pressed="false" data-document="Carnet de residente">Carnet de residente</button>
+      </div>
+      <form id="login-form"><label class="field-label" for="document-number" id="document-label">Número de DUI</label><input id="document-number" autocomplete="username" required placeholder="Número de documento"><label class="field-label" for="password">Contraseña</label><input id="password" type="password" autocomplete="current-password" required placeholder="Contraseña"><p class="login-note" id="login-note" aria-live="polite">Modo demostración: tus datos no se envían ni se guardan.</p><button class="screen-button" type="submit">Iniciar sesión</button></form>
+      <p style="text-align:center;margin-top:16px">¿Olvidaste tu contraseña? <button class="text-action" type="button" id="forgot-password">Recuperar acceso</button></p><p style="text-align:center;margin-top:8px">¿Aún no tienes cuenta? <button class="text-action" type="button" id="register-link">Regístrate aquí</button></p>
+    </div>
+  </main>
+
+  <main id="editor-view" class="app-view screen-view" hidden>
+    <div class="screen-container"><div class="view-actions"><button type="button" class="screen-button secondary" data-route="profile">← Ver perfil</button><div><button type="button" class="screen-button secondary" id="save-draft">Guardar borrador</button><button type="button" class="screen-button" id="publish-profile">Publicar perfil</button></div></div><h1 class="editor-title">Editar perfil</h1><p class="screen-heading">Actualiza tu información profesional. Esta demostración guarda cambios solo en esta página.</p>
+      <div class="editor-layout"><nav class="editor-nav" aria-label="Secciones del editor"><button type="button" data-editor-section="general" aria-current="true">Datos generales</button><button type="button" data-editor-section="formacion">Formación académica</button><button type="button" data-editor-section="cursos">Cursos</button><button type="button" data-editor-section="habilidades">Habilidades</button><button type="button" data-editor-section="proyectos">Proyectos</button><button type="button" data-editor-section="experiencia">Experiencia</button></nav>
+        <form class="editor-card" id="editor-form">
+          <section class="editor-section" data-section="general"><h2>Datos generales</h2><div class="editor-field"><label for="edit-name">Nombre</label><input id="edit-name" value="Jeniffer Morales"></div><div class="editor-field"><label for="edit-role">Profesión</label><input id="edit-role" value="Ingeniería en sistemas informáticos"></div><div class="editor-field"><label for="edit-location">Ubicación</label><input id="edit-location" value="San Salvador, El Salvador"></div><div class="editor-field"><label for="edit-bio">Acerca de mí</label><textarea id="edit-bio">Con sólida experiencia en la construcción de herramientas eficientes, mantenimiento de repositorios y optimización de flujos de trabajo técnicos.</textarea></div></section>
+          <section class="editor-section" data-section="formacion" hidden><h2>Formación académica</h2><div class="editor-field"><label for="education">Formación</label><input id="education" value="Desarrollo de Software en código abierto"></div><div class="editor-field"><label for="institution">Institución</label><input id="institution" value="Escuela Superior de Innovación y Tecnología"></div></section>
+          <section class="editor-section" data-section="cursos" hidden><h2>Cursos</h2><div class="editor-list" data-list="cursos"><div class="editor-entry"><input aria-label="Curso" value="Ruta de Google Cloud Data Analytics"><button type="button" class="remove-entry" aria-label="Eliminar curso">Eliminar</button></div></div><button type="button" class="screen-button secondary add-entry" data-list="cursos">+ Agregar curso</button></section>
+          <section class="editor-section" data-section="habilidades" hidden><h2>Habilidades</h2><div class="editor-list" data-list="habilidades"><div class="editor-entry"><input aria-label="Habilidad" value="JavaScript"><button type="button" class="remove-entry" aria-label="Eliminar habilidad">Eliminar</button></div><div class="editor-entry"><input aria-label="Habilidad" value="Python"><button type="button" class="remove-entry" aria-label="Eliminar habilidad">Eliminar</button></div></div><button type="button" class="screen-button secondary add-entry" data-list="habilidades">+ Agregar habilidad</button></section>
+          <section class="editor-section" data-section="proyectos" hidden><h2>Proyectos</h2><div class="editor-list" data-list="proyectos"><div class="editor-entry"><input aria-label="Proyecto" value="Calculadora de Gastos Mensuales"><button type="button" class="remove-entry" aria-label="Eliminar proyecto">Eliminar</button></div></div><button type="button" class="screen-button secondary add-entry" data-list="proyectos">+ Agregar proyecto</button></section>
+          <section class="editor-section" data-section="experiencia" hidden><h2>Experiencia</h2><div class="editor-field"><label for="experience">Cargo y puesto</label><input id="experience" value="Analista de Automatización de Pruebas"></div><div class="editor-field"><label for="company">Empresa</label><input id="company" value="Empresa Tecnológica ABC"></div></section>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       6. FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Espaciador / Alineación izquierda opcional para centrar el logo perfectamente -->
+      <div style="width: 140px; display: none;" class="desktop-spacer"></div>
+
+      <!-- Logotipo Gobierno de El Salvador centrado -->
+      <div class="footer-center">
+        <img src="../iconos/footer-gobierno-transparent.png" alt="Gobierno de El Salvador" class="footer-logo-img" />
+      </div>
+
+      <!-- Iconos Redes Sociales -->
+      <div class="social-links">
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Facebook">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
+          </svg>
+        </a>
+
+        <!-- X (Twitter) -->
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="YouTube">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="status-message" id="status-message" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const profiles = [
+        { name: 'Jeniffer Morales', photo: 'jeniffer-morales.png', role: 'Ingeniera en sistemas informáticos', area: 'Desarrollo', location: 'San Salvador, El Salvador', mode: 'Híbrido', skills: ['JavaScript', 'Python', 'HTML', 'CSS', 'GitHub'], bio: 'Con sólida experiencia en la construcción de herramientas eficientes, mantenimiento de repositorios y optimización de flujos de trabajo técnicos. Me motiva el aprendizaje continuo, la transparencia en el desarrollo y la creación de soluciones accesibles que generen un impacto positivo en la comunidad tecnológica.' },
+        { name: 'Carlos Mora', photo: 'carlos-mora.png', role: 'Analista de datos', area: 'Datos', location: 'Santa Tecla, El Salvador', mode: 'Remoto', skills: ['JavaScript', 'Python', 'HTML', 'CSS', 'GitHub'], bio: 'Analista enfocado en transformar información en decisiones claras y útiles para los equipos.' },
+        { name: 'Ana López', photo: 'ana-lopez.png', role: 'Diseñadora UX/UI', area: 'Diseño', location: 'San Salvador, El Salvador', mode: 'Híbrido', skills: ['JavaScript', 'Python', 'HTML', 'CSS'], bio: 'Diseñadora centrada en crear experiencias digitales simples, accesibles y coherentes.' },
+        { name: 'Sofía Ramírez', photo: 'sofia-ramirez.png', role: 'Ingeniera DevOps', area: 'DevOps', location: 'San Salvador, El Salvador', mode: 'Remoto', skills: ['JavaScript', 'Python', 'HTML', 'CSS', 'GitHub'], bio: 'Experiencia en automatización, infraestructura y despliegue de aplicaciones.' },
+        { name: 'Diego Flores', photo: 'diego-flores.png', role: 'Desarrollador Full-Stack', area: 'Desarrollo', location: 'La Libertad, El Salvador', mode: 'Presencial', skills: ['JavaScript', 'Python', 'HTML', 'CSS', 'GitHub'], bio: 'Desarrollador de productos web desde la interfaz hasta los servicios de datos.' },
+        { name: 'Valentina Cruz', photo: 'valentina-cruz.png', role: 'Diseñadora gráfica', area: 'Diseño', location: 'Santa Ana, El Salvador', mode: 'Remoto', skills: ['JavaScript', 'Python', 'HTML', 'CSS', 'GitHub'], bio: 'Diseñadora gráfica interesada en sistemas visuales y comunicación digital.' },
+        { name: 'Isabella Mendoza', photo: 'isabella-mendoza.png', role: 'Especialista en Cloud', area: 'DevOps', location: 'San Salvador, El Salvador', mode: 'Híbrido', skills: ['JavaScript', 'Python', 'HTML', 'CSS'], bio: 'Especialista en plataformas de nube y modernización de servicios.' },
+        { name: 'José Canizales', photo: 'jose-canizales.png', role: 'Técnico en Azure', area: 'DevOps', location: 'San Miguel, El Salvador', mode: 'Presencial', skills: ['JavaScript', 'Python', 'HTML'], bio: 'Técnico con experiencia en soporte y servicios en la nube.' },
+        { name: 'Juan Alvarado', photo: 'juan-alvarado.png', role: 'Ingeniero en Sistemas Informáticos', area: 'Datos', location: 'San Salvador, El Salvador', mode: 'Remoto', skills: ['JavaScript', 'Python', 'HTML', 'CSS'], bio: 'Ingeniero en sistemas con interés en datos, automatización y desarrollo.' }
+      ];
+      const views = ['home', 'directory', 'profile', 'login', 'editor'];
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+      const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+      const notice = $('#status-message');
+      let selectedProfile = profiles[0];
+      let nextAfterLogin = 'editor';
+      let noticeTimer;
+
+      function announce(message) {
+        notice.textContent = message;
+        clearTimeout(noticeTimer);
+        noticeTimer = setTimeout(() => { notice.textContent = ''; }, 3200);
+      }
+
+      function bindAvatarImages(root = document) {
+        $$('.avatar-photo', root).forEach(photo => {
+          const fallback = photo.previousElementSibling;
+          const showPhoto = () => { photo.hidden = false; fallback.hidden = true; };
+          const showFallback = () => { photo.hidden = true; fallback.hidden = false; };
+          photo.addEventListener('load', showPhoto, { once: true });
+          photo.addEventListener('error', showFallback, { once: true });
+          if (photo.complete) photo.naturalWidth ? showPhoto() : showFallback();
+        });
+      }
+
+      function showView(name, { replace = false } = {}) {
+        if (!views.includes(name)) name = 'home';
+        views.forEach(view => {
+          const el = document.getElementById(`${view}-view`);
+          if (el) el.hidden = view !== name;
+        });
+        if (name === 'directory') renderDirectory();
+        if (name === 'profile') renderProfile();
+        const hash = name === 'home' ? '#inicio' : `#${name === 'login' ? 'acceso' : name === 'directory' ? 'directorio' : name}`;
+        if (replace) history.replaceState({ view: name }, '', hash);
+        else if (location.hash !== hash) history.pushState({ view: name }, '', hash);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function cardMarkup(person) {
+        const initials = person.name.split(' ').map(part => part[0]).slice(0, 2).join('');
+        return `<button type="button" class="talent-card" data-profile="${escapeHtml(person.name)}" aria-label="Ver perfil de ${escapeHtml(person.name)}">
+          <span class="avatar avatar-placeholder" aria-hidden="true">${escapeHtml(initials)}</span><img class="avatar avatar-photo" src="../iconos/perfiles/${escapeHtml(person.photo)}" alt="Foto de ${escapeHtml(person.name)}" hidden><h3>${escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p><p class="person-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>${escapeHtml(person.location)}</span></p>
+          <span class="talent-tags">${person.skills.slice(0, 5).map(skill => `<span class="talent-tag">${escapeHtml(skill)}</span>`).join('')}</span>
+        </button>`;
+      }
+
+      function renderDirectory() {
+        const term = $('#search-input').value.trim().toLocaleLowerCase('es');
+        const areas = $$('[data-filter="area"]:checked').map(input => input.value);
+        const modes = $$('[data-filter="mode"]:checked').map(input => input.value);
+        const results = profiles.filter(person => {
+          const searchable = `${person.name} ${person.role} ${person.location} ${person.skills.join(' ')}`.toLocaleLowerCase('es');
+          return (!term || searchable.includes(term)) && (!areas.length || areas.includes(person.area)) && (!modes.length || modes.includes(person.mode));
+        });
+        $('#directory-count').textContent = `${results.length} ${results.length === 1 ? 'perfil encontrado' : 'perfiles encontrados'}`;
+        $('#talent-grid').innerHTML = results.length ? results.map(cardMarkup).join('') : '<p class="empty-state">No encontramos perfiles con esos criterios. Prueba con otra búsqueda o limpia los filtros.</p>';
+        bindAvatarImages($('#talent-grid'));
+      }
+
+      function renderProfile() {
+        const person = selectedProfile;
+        const initials = person.name.split(' ').map(part => part[0]).slice(0, 2).join('');
+        $('#profile-content').innerHTML = `<span class="avatar avatar-placeholder" aria-hidden="true">${escapeHtml(initials)}</span><img class="avatar avatar-photo" src="../iconos/perfiles/${escapeHtml(person.photo)}" alt="Foto de ${escapeHtml(person.name)}" hidden><h1 class="profile-name">${escapeHtml(person.name)}</h1><p class="profile-role">${escapeHtml(person.role)} · ${escapeHtml(person.location)}</p><p class="profile-bio">${escapeHtml(person.bio)}</p><div class="profile-tags">${person.skills.map(skill => `<span class="talent-tag">${escapeHtml(skill)}</span>`).join('')}</div>
+          <div class="profile-sections"><section class="profile-section"><h2>Formación académica</h2><p>Desarrollo de Software en código abierto</p><p>Escuela Superior de Innovación y Tecnología · 2026</p></section><section class="profile-section"><h2>Cursos</h2><p>Ruta de Google Cloud Data Analytics · Finalizado</p><p>Introducción a protocolos de red · En curso</p></section><section class="profile-section"><h2>Proyectos</h2><p>Calculadora de Gastos Mensuales</p><p>Portafolio Web Personal</p></section><section class="profile-section"><h2>Experiencia</h2><p>${escapeHtml(person.role)} · Experiencia profesional y proyectos tecnológicos.</p></section></div>`;
+        bindAvatarImages($('#profile-content'));
+      }
+
+      function routeFromHash() {
+        const key = location.hash.slice(1);
+        const routes = { inicio: 'home', talento: 'directory', directorio: 'directory', perfil: 'profile', acceso: 'login', editor: 'editor' };
+        const view = routes[key] || 'home';
+        views.forEach(name => { const el = document.getElementById(`${name}-view`); if (el) el.hidden = name !== view; });
+        if (view === 'directory') renderDirectory();
+        if (view === 'profile') renderProfile();
+      }
+
+      document.addEventListener('click', event => {
+        const routeButton = event.target.closest('[data-route]');
+        if (routeButton) {
+          event.preventDefault();
+          nextAfterLogin = routeButton.dataset.next || 'editor';
+          showView(routeButton.dataset.route);
+          return;
+        }
+        const card = event.target.closest('[data-profile]');
+        if (card) {
+          selectedProfile = profiles.find(person => person.name === card.dataset.profile) || profiles[0];
+          showView('profile');
+          return;
+        }
+        const tab = event.target.closest('[data-document]');
+        if (tab) {
+          $$('[data-document]').forEach(button => button.setAttribute('aria-pressed', String(button === tab)));
+          const labels = { DUI: 'Número de DUI', Pasaporte: 'Número de pasaporte', 'Carnet de residente': 'Número de carnet de residente' };
+          $('#document-label').textContent = labels[tab.dataset.document];
+          $('#document-number').placeholder = labels[tab.dataset.document];
+          return;
+        }
+        const sectionButton = event.target.closest('[data-editor-section]');
+        if (sectionButton) {
+          $$('[data-editor-section]').forEach(button => button.setAttribute('aria-current', String(button === sectionButton)));
+          $$('.editor-section').forEach(section => { section.hidden = section.dataset.section !== sectionButton.dataset.editorSection; });
+          return;
+        }
+        const addButton = event.target.closest('.add-entry');
+        if (addButton) {
+          const list = document.querySelector(`.editor-list[data-list="${addButton.dataset.list}"]`);
+          const label = addButton.dataset.list === 'habilidades' ? 'Habilidad' : addButton.dataset.list === 'cursos' ? 'Curso' : 'Proyecto';
+          const row = document.createElement('div'); row.className = 'editor-entry';
+          row.innerHTML = `<input aria-label="${label}" placeholder="Escribe ${label.toLowerCase()}"><button type="button" class="remove-entry" aria-label="Eliminar ${label.toLowerCase()}">Eliminar</button>`;
+          list.append(row); row.querySelector('input').focus(); return;
+        }
+        const removeButton = event.target.closest('.remove-entry');
+        if (removeButton) { removeButton.closest('.editor-entry').remove(); return; }
+        if (event.target.closest('#clear-filters')) {
+          $('#search-input').value = '';
+          $$('[data-filter]').forEach(input => { input.checked = false; }); renderDirectory();
+        }
+        if (event.target.closest('#forgot-password')) announce('La recuperación real debe conectarse al portal de identidad ESIT.');
+        if (event.target.closest('#register-link')) announce('El registro real debe conectarse al portal de identidad ESIT.');
+        if (event.target.closest('#save-draft')) announce('Borrador guardado en esta sesión.');
+        if (event.target.closest('#publish-profile')) {
+          selectedProfile.name = $('#edit-name').value.trim() || selectedProfile.name;
+          selectedProfile.role = $('#edit-role').value.trim() || selectedProfile.role;
+          selectedProfile.location = $('#edit-location').value.trim() || selectedProfile.location;
+          selectedProfile.bio = $('#edit-bio').value.trim() || selectedProfile.bio;
+          showView('profile'); announce('Perfil actualizado en esta demostración.');
+        }
+        if (event.target.closest('#generate-cv')) window.print();
+      });
+
+      $('#talent-search').addEventListener('submit', event => { event.preventDefault(); renderDirectory(); });
+      $('#directory-view').addEventListener('change', event => { if (event.target.matches('[data-filter]')) renderDirectory(); });
+      $('#login-form').addEventListener('submit', event => {
+        event.preventDefault();
+        if (!event.currentTarget.reportValidity()) return;
+        $('#document-number').value = ''; $('#password').value = '';
+        showView(nextAfterLogin); announce('Acceso de demostración: no se validaron credenciales reales.');
+      });
+      window.addEventListener('popstate', routeFromHash);
+      routeFromHash();
+      renderDirectory();
+    })();
+  </script>
+
+</body>
+
+</html>
+
